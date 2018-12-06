@@ -1,4 +1,8 @@
 # Muzik
 Your everyday music streaming and sharing social website
-currently in development 
+Create account
+follow popular artists
+create playlists
+share playlist
+write reviews about an albums
 
