@@ -29,128 +29,109 @@ function getInputValue($val) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Welome</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"    href="Includes/Assets/CSS/register.css" >
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     </head>
+    <div id="logincontainer">
+        <body>
 
-    <body>
 
 
-        <div class="row">
-            <div class="col-sm">
-                <div class="position-static">
-                    <div class="container">
 
-                        <form id="loginform" action="register.php" method="post">
+            <div class="row">
 
-                            <div class="form-goup">
 
-                                <div class="col-sm-6">
-                                    <h3>Login</h3>
-                                    <p>
+                <div class="col-sm">
+                    <div class="position-static">
+                        <div class="container">
 
-                                        <label>Username</label>
-                                        <input id="username" class="form-control" name="loginUsername" type="text" placeholder="mutkiAbal"  required>
-                                             <?php echo $account->getError(Constants::$loginError); ?>
-                                    </p>
-                                </div>
+                            <form id="loginform" action="register.php" method="post">
 
-                            </div>
+                                <div class="form-goup">
 
-                            <div class="form-group">
-                                <div class="col-sm-6">
+                                    <div class="col-sm-6">
+                                        <h3>Login</h3>
+                                        <p>
 
-                                    <label>Password</label>
-                                    <input id="password" name="loginPassword" class="form-control" type="password" required>
+                                            <label>Username</label>
+                                            <input id="username" class="form-control" name="loginUsername" type="text" placeholder="lalalalala" value="<?php getInputValue('loginUsername')   ?>"  required>
+                                            <?php echo $account->getError(Constants::$loginError); ?>
+                                        </p>
+                                    </div>
 
                                 </div>
-                            </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+
+                                        <label>Password</label>
+                                        <input id="password" name="loginPassword" class="form-control" type="password" required>
+
+                                    </div>
+                                </div>
 
 
-                            <div class="col-sm-5">
+                                <div class="col-sm-5">
 
-                                <input name="login" type="submit" value="Login" class="btn btn-outline-success">
+                                    <input name="login" type="submit" value="Login" class="btn btn-outline-success">
+                                    <br>
+                                    <div class="noAccount">
+                                        <span id="hide">Dont have account? Register</span>
+                                        
+                                    </div>
 
 
 
-                            </div>
 
+                                </div>
+                        </div>
 
                         </form>
 
                     </div>
 
                 </div>
-            </div>
 
 
 
 
-            <div class="col-sm">
-                <div class="position-relative">
-                    <div class="container">
 
-                        <form id="registerform" action="register.php" method="post">
-                            <h3>Create New Account</h3>
-                            <div class="form-goup row">
+                <div class="col-sm">
+                    <div class="position-relative">
+                        <div class="container">
 
-                                <div class="col-sm-5">
+                            <form id="registerform" action="register.php" method="post">
+                                <h3>Create New Account</h3>
+                                <div class="form-goup row">
 
-                                    <p>
-                                        <label> Username</label>
-                                        <input id="username" class="form-control" name="username" type="text" placeholder="User89" value="<?php getInputValue('username') ?>"   required>
-                                        <?php echo $account->getError(Constants::$unameCharcount); ?>
-                                        <?php echo $account->getError(Constants::$usernameExists); ?>
+                                    <div class="col-sm-5">
 
-
-                                    </p>
-
-                                </div>
-
-                                <div class="col-sm-5">
-
-                                    <p>
-
-                                        <label>Full Name</label>
-                                        <input id="fullname" class="form-control" name="fullname"  value="<?php getInputValue('fullname') ?>" type="text" required>
-                                        <?php echo $account->getError(Constants::$fnameCharcount); ?>
+                                        <p>
+                                            <label> Username</label>
+                                            <input id="username" class="form-control" name="username" type="text" placeholder="User89" value="<?php getInputValue('username') ?>"   required>
+                                            <?php echo $account->getError(Constants::$unameCharcount); ?>
+                                            <?php echo $account->getError(Constants::$usernameExists); ?>
 
 
-                                    </p>
+                                        </p>
+
+                                    </div>
+
+                                    <div class="col-sm-5">
+
+                                        <p>
+
+                                            <label>Full Name</label>
+                                            <input id="fullname" class="form-control" name="fullname"  value="<?php getInputValue('fullname') ?>" type="text" required>
+                                            <?php echo $account->getError(Constants::$fnameCharcount); ?>
 
 
-                                </div>
+                                        </p>
 
 
-
-
-                            </div>
-
-
-
-                            <div class="form-goup row">
-
-                                <div class="col-sm-5">
-
-                                    <p>
-
-                                        <label> Email</label>
-                                        <input id="email" class="form-control" name="email" type="email" placeholder="some@email.net" required>
-                                        <?php echo $account->getError(Constants::$emailFilter); ?>
-                                        <?php echo $account->getError(Constants::$emailExists); ?>
-
-                                    </p>
-
-                                </div>
-
-                                <div class="col-sm-5">
-
-
-                                    <label> Date of Birth</label>
-
-                                    <input type="date" value="<?php getInputValue('bday') ?>" name="bday">
-                                    <?php echo $account->getError(Constants::$ageValidation); ?>
+                                    </div>
 
 
 
@@ -159,66 +140,98 @@ function getInputValue($val) {
 
 
 
+                                <div class="form-goup row">
 
-                            </div>
+                                    <div class="col-sm-5">
+
+                                        <p>
+
+                                            <label> Email</label>
+                                            <input id="email" class="form-control" name="email" type="email" placeholder="some@email.net" required>
+                                            <?php echo $account->getError(Constants::$emailFilter); ?>
+                                            <?php echo $account->getError(Constants::$emailExists); ?>
+
+                                        </p>
+
+                                    </div>
+
+                                    <div class="col-sm-5">
+
+
+                                        <label> Date of Birth</label>
+
+                                        <input type="date" value="<?php getInputValue('bday') ?>" name="bday">
+                                        <?php echo $account->getError(Constants::$ageValidation); ?>
 
 
 
 
+                                    </div>
 
 
-
-                            <div class="form-group row">
-                                <div class="col-sm-5">
-
-                                    <label>Password</label>
-                                    <input id="password1" name="password1" class="form-control" type="password" required>
-                                    <?php echo $account->getError(Constants::$passCharcount); ?>
-                                    <?php echo $account->getError(Constants::$passnotAlhpanumeric); ?>
 
 
                                 </div>
 
-                                <div class="col-sm-5">
 
-                                    <label>Confirm Password</label>
-                                    <input id="password2" name="password2" class="form-control" type="password" required>
-                                    <?php echo $account->getError(Constants::$passDontmatch); ?>
 
+
+
+
+
+                                <div class="form-group row">
+                                    <div class="col-sm-5">
+
+                                        <label>Password</label>
+                                        <input id="password1" name="password1" class="form-control" type="password" required>
+                                        <?php echo $account->getError(Constants::$passCharcount); ?>
+                                        <?php echo $account->getError(Constants::$passnotAlhpanumeric); ?>
+
+
+                                    </div>
+
+                                    <div class="col-sm-5">
+
+                                        <label>Confirm Password</label>
+                                        <input id="password2" name="password2" class="form-control" type="password" required>
+                                        <?php echo $account->getError(Constants::$passDontmatch); ?>
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+
+
+                                        <p>
+                                            <input name="register" type="submit" value="Register" class="btn btn-outline-success">
+                                        </p>
+                                    </div>
                                 </div>
 
 
 
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3">
+                            </form>
 
-
-                                    <p>
-                                        <input name="register" type="submit" value="Register" class="btn btn-outline-success">
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </form>
+                        </div>
 
                     </div>
-
                 </div>
+
+
             </div>
 
 
 
-        </div>
 
 
 
 
 
-
-    </body>
+        </body>
+    </div>
 
 
 

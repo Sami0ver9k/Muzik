@@ -1,0 +1,174 @@
+
+html, body{
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+
+
+}
+*{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#nowPlayingBarContainer {
+    width: 100%;
+    background-color:antiquewhite;
+    bottom: 0;
+
+    position: fixed;
+    min-width: 600px;
+}
+#nowPlayingBar{
+
+    display: flex;
+    height: 90px;
+    padding: 15px;
+    box-sizing: border-box;
+
+
+
+}
+#nowPlayingBarLeft,
+#nowPlayingBarRight {
+
+    width: 30%;
+    min-width: 180px;
+  
+
+
+}
+
+
+#nowPlayingBarRight{
+      position: relative;
+    margin-top: 16px;
+}
+
+
+#nowPlayingBarCenter{
+    display: flex;
+    width: 40%;
+    max-width: 700px;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#nowPlayingBar .content {
+    width: 100%;
+}
+
+.playerControls .buttons {
+    margin: 0 auto;
+    display: table;
+
+
+}
+.controllButton{
+    border: none;
+    vertical-align: middle;
+
+    background-color: transparent;
+
+
+}
+.controllButton img {
+    height : 25px;
+    width: 25px;
+
+
+}
+.controllButton.play img,
+.controllButton.pause img {
+
+    width: 35px;
+    height: 35px;
+
+
+
+}
+.controllButton:hover{
+    cursor: pointer;
+}
+
+.progressTime{
+    color: #a75d46;
+    font-size: 17px;
+    min-width: 45px;
+    text-align: center;
+
+
+}
+.playbackBar{
+    display: flex;
+}
+.progressBar{
+    width: 100%;
+    height: 15px;
+    display: inline-flex;
+    cursor: pointer;
+
+
+}
+.progressBarBg{
+    background-color: #a75d46;
+    height: 5px;
+    width: 100%;
+    border-radius: 3px;
+
+
+}
+
+.progress{
+    background-color: greenyellow;
+    height: 5px;
+    width: 100%;
+    border-radius: 3px;
+
+
+}
+.playbackBar .progressBar{
+    margin: 5px;
+}
+
+
+#nowPlayingBarLeft   .albumArt{
+    height: 100%;
+    width: 60px;
+    display: inline-flex;
+    float: left;
+    cursor:pointer;
+    margin-right: 16px;
+    background-size: cover;
+}
+#nowPlayingBarLeft .trackInfo{
+    display:table;
+}
+#nowPlayingBarLeft .trackInfo .trackName {
+    margin: 6px 0;
+    display: inline-block;
+    width: 100%;
+    
+    
+}
+#nowPlayingBarLeft .trackInfo .artistName span {
+    font-size: 13px;
+    color: #a75d46
+    
+}
+.volumeBar{
+    width: 200px;
+    position: absolute;
+    right: 0;
+   
+    
+    
+}
+
+
+.volumeBar .progressBar{
+    width: 130px;
+    display: inline-flex;
+}

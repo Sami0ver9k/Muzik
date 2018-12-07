@@ -9,6 +9,7 @@ if (isset($_POST['login'])) {
     $success = $account->loginAcc($username, $pass);
     if($success==true)
     {
+        $_SESSION['userloggedin']=$username; 
         header("Location: index.php");
         
     }

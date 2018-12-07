@@ -26,7 +26,8 @@ if (isset($_POST['register'])) {
     $success = $account->registerAcc($username, $fname, $email, $pass1, $pass2, $bday);
 
     if ($success == true) {
-
+       
+         $_SESSION['userloggedin']=$username; 
         header("Location: index.php");
     }
 }
